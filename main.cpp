@@ -4,12 +4,11 @@ using namespace std;
 
 int main() {
 
-    string phrase = "Giraffe Academy";
-    string phrasesub;
-    phrase[0] = 'B';
-    cout << phrase.find("ffe", 3) << endl;
-    phrasesub = phrase.substr(8, 3);
-    cout << phrasesub;
+    int wnum = 5;
+    double dnum = 5.5;
+    wnum++;
+    cout << wnum << endl;
+    cout << 10 % 3;
 
     return 0;
 }
