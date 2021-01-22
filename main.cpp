@@ -1,14 +1,11 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 int main() {
 
-    int wnum = 5;
-    double dnum = 5.5;
-    wnum++;
-    cout << wnum << endl;
-    cout << 10 % 3;
+    cout << fmax(4,9);
 
     return 0;
 }
