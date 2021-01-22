@@ -5,7 +5,10 @@ using namespace std;
 
 int main() {
 
-    cout << fmax(4,9);
+    string name;
+    cout << "Enter your name: ";
+    getline(cin, name);
+    cout << "Hello " << name;
 
     return 0;
 }
