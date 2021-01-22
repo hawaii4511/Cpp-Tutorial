@@ -5,13 +5,17 @@ using namespace std;
 
 int main() {
 
-    double num1, num2;
-    cout << "Enter first number: ";
-    cin >> num1;
-    cout << "Enter second number: ";
-    cin >> num2;
+    string color, pluralNoun, celebrity;
 
-    cout << num1 + num2;
+    cout << "Enter a color: ";
+    getline(cin, color);
+    cout << "Enter a plural noun: ";
+    getline(cin, pluralNoun);
+    cout << "Enter a celebrity: ";
+    getline(cin, celebrity);
+    cout << "Roses are " << color << endl;
+    cout << pluralNoun << " are blue" << endl;
+    cout << "I love " << celebrity << endl;
 
     return 0;
 }
