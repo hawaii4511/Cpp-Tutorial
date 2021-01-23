@@ -5,27 +5,15 @@ using namespace std;
 
 int main() {
 
-    int secretNum = 7;
-    int guess;
-    int guessCount = 0;
-    int guessLimit = 3;
-    bool outOfGuesses = false;
-
-    while(secretNum != guess && !outOfGuesses){
-        if(guessCount<guessLimit){
-            cout << "Enter guess: ";
-            cin >> guess;
-            guessCount++;
-        } else {
-            outOfGuesses = true;
-        }
-
+    int index = 1;
+    while (index <=5) {
+        cout << index << endl;
+        index++;
     }
 
-    if(outOfGuesses){
-        cout << "You lose!";
-    } else {
-        cout << "You win!";
+    int nums[]={10,20,50,70,30};
+    for(int i=0; i < 5; i++){
+        cout << nums[i] << endl;
     }
     
     return 0;
