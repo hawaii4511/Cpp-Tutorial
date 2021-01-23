@@ -2,39 +2,36 @@
 using namespace std;
 
 
-class Book {
+class Student {
     public:
-        string title;
-        string author;
-        int pages;
+        string name;
+        string major;
+        double gpa;
 
-        Book(){
-            title = "no title";
-            author = "no author";
-            pages = 0;
+        Student(string aName, string aMajor, double aGpa){
+            name = aName;
+            major = aMajor;
+            gpa = aGpa;
         }
 
-        // "a" stands for argument
-        Book(string aTitle, string aAuthor, int aPages){
-            title = aTitle;
-            author = aAuthor;
-            pages = aPages;
+        bool hasHonors(){
+            if(gpa >= 3.5){
+                return true;
+            } else {
+                return false;
+            }
         }
 };
 
 int main() {
 
-    //A class is a new data type. We give it attributes to describe it. It's the template of the data type.
-    //An object is an instance of that class that uses that template.
-    //A constructor is a function that can/will get called whenever we create an object of a class. Can be used to initialize information.
-    // It's common to give multiple constructors to give multiple options.
+    //Object functions aka instance functions. It's a function that we can put inside of one of our classes. 
+    //Depending on the object that calls it, it's returning different things.
 
-    Book book1("Harry Potter", "J.K.Rowling",500);
-    Book book2("LOTR","Tolkein",1000);
-    Book book3;
+    Student student1("Jim","Business",2.4);
+    Student student2("Pam","Art",3.6);
 
-    cout << book1.title << endl;
-    cout << book3.title << endl;
+    cout << student2.hasHonors();
  
     return 0;
 }
