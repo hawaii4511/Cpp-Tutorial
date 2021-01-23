@@ -1,20 +1,19 @@
 #include <iostream>
 using namespace std;
 
+int power(int baseNum, int powNum) {
+    int result = 1;
 
+    for(int i=0; i<powNum; i++){
+        result = result * baseNum;
+    }
+
+    return result;
+}
 
 int main() {
 
-    int index = 1;
-    while (index <=5) {
-        cout << index << endl;
-        index++;
-    }
-
-    int nums[]={10,20,50,70,30};
-    for(int i=0; i < 5; i++){
-        cout << nums[i] << endl;
-    }
+    cout << power(4,2);
     
     return 0;
 }
