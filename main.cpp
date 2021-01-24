@@ -1,37 +1,47 @@
 #include <iostream>
 using namespace std;
 
+//Movie data type
+class Movie {
+    //Only code inside Movie class can access private section
+    private:
+        string rating;
 
-class Student {
+    //Any other code can access a public category
     public:
-        string name;
-        string major;
-        double gpa;
-
-        Student(string aName, string aMajor, double aGpa){
-            name = aName;
-            major = aMajor;
-            gpa = aGpa;
+        string title;
+        string director;
+        
+        //Constructor
+        Movie(string aTitle, string aDirector, string aRating){
+            title = aTitle;
+            director = aDirector;
+            setRating(aRating);
         }
 
-        bool hasHonors(){
-            if(gpa >= 3.5){
-                return true;
+        void setRating(string aRating){
+            if(aRating == "G" || aRating == "PG" || aRating == "PG-13" || aRating == "R" || aRating == "NR"){
+                rating = aRating;
             } else {
-                return false;
+                rating = "NR";
             }
         }
+
+        string getRating(){
+            return rating;
+        }
+
 };
 
 int main() {
 
-    //Object functions aka instance functions. It's a function that we can put inside of one of our classes. 
-    //Depending on the object that calls it, it's returning different things.
+    //Getters and Setters allow you to control the attributes inside of Classes. So that you can't give a movie a rating of "Dog"
 
-    Student student1("Jim","Business",2.4);
-    Student student2("Pam","Art",3.6);
+    //Object
+    Movie avengers("The Avengers", "Joss Whedon", "PG-15");
 
-    cout << student2.hasHonors();
+    //avengers.setRating("Dog");
+    cout << avengers.getRating();
  
     return 0;
 }
