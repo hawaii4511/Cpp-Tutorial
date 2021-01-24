@@ -1,47 +1,40 @@
 #include <iostream>
 using namespace std;
 
-//Movie data type
-class Movie {
-    //Only code inside Movie class can access private section
-    private:
-        string rating;
-
-    //Any other code can access a public category
+//Super class
+class Chef {
     public:
-        string title;
-        string director;
-        
-        //Constructor
-        Movie(string aTitle, string aDirector, string aRating){
-            title = aTitle;
-            director = aDirector;
-            setRating(aRating);
+        void makeChicken(){
+            cout << "The chef makes yummy chicken" << endl;
         }
-
-        void setRating(string aRating){
-            if(aRating == "G" || aRating == "PG" || aRating == "PG-13" || aRating == "R" || aRating == "NR"){
-                rating = aRating;
-            } else {
-                rating = "NR";
-            }
+        void makeSalad(){
+            cout << "The chef makes salad" << endl;
         }
-
-        string getRating(){
-            return rating;
+        void makeSpecialDish(){
+            cout << "The chef makes bbq ribs" << endl;
         }
+};
 
+//Sub class
+//Inheritance is using existing class to build another class
+class ItalianChef : public Chef{
+    public:
+        void makePasta(){
+            cout << "The chef makes pasta" << endl;
+        }
+        void makeSpecialDish(){
+            cout << "The chef makes chicken parm" << endl;
+        }
 };
 
 int main() {
 
-    //Getters and Setters allow you to control the attributes inside of Classes. So that you can't give a movie a rating of "Dog"
+    Chef chef;
+    chef.makeSpecialDish();
 
-    //Object
-    Movie avengers("The Avengers", "Joss Whedon", "PG-15");
-
-    //avengers.setRating("Dog");
-    cout << avengers.getRating();
+    ItalianChef italianChef;
+    italianChef.makeSpecialDish();
+    italianChef.makePasta();
  
     return 0;
 }
